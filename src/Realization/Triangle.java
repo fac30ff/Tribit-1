@@ -30,7 +30,7 @@ public class Triangle {
         return lastBits;
     }
 
-    public void permutate() throws Exception { //Check needed and think about sout
+    public void permutate() throws Exception {
         while (true) {
             if (entrails == 0) return;
             if (entrails == 15) return;
@@ -80,7 +80,7 @@ public class Triangle {
 
     @Override
     public String toString() {
-        return " " + firstBit + "\n" + lastBits;
+        return firstBit + lastBits;
     }
 
     @Override
