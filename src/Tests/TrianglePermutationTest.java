@@ -49,11 +49,14 @@ public class TrianglePermutationTest {
 
     @Test
     public void primitiveTestsOnTribit() {
-        int num = 1;
         String firstBit = input.substring(0, 1);
         String lastBits = input.substring(1);
-        Triangle testedTriangle = new Triangle(num, firstBit, lastBits);
-        testedTriangle.permutate();
+        Triangle testedTriangle = new Triangle(firstBit, lastBits);
+        try {
+            testedTriangle.permutate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         String actual = testedTriangle.getFirstBit();
         assertEquals(expected, actual);
     }

@@ -59,7 +59,12 @@ public class TribitTests {
 
     @Test
     public void primitiveTestsOnTribit() {
-        Tribit testedTribit = new Tribit(input);
+        Tribit testedTribit = null;
+        try {
+            testedTribit = new Tribit(input);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         String actual = testedTribit.countCheckSum();
         assertEquals(expected, actual);
     }
