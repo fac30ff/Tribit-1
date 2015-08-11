@@ -39,7 +39,7 @@ public class Triangle {
         }
     }
 
-    private int permutation(int start) throws Exception {
+    public int permutation(int start) throws Exception {
         switch (start) {
             case 0:
                 return 0;

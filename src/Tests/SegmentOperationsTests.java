@@ -2,9 +2,11 @@ package Tests;
 
 import Realization.Segment;
 import Realization.Triangle;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
@@ -12,7 +14,7 @@ import static junit.framework.Assert.assertEquals;
 /**
  * Created by Polina on 05-Aug-15.
  */
-public class SmallFunctionsTests {
+public class SegmentOperationsTests {
 
     @Test
     public void testSegmentConstruction1() {
@@ -79,5 +81,4 @@ public class SmallFunctionsTests {
         String actual = tested.permutateSegment();
         assertEquals(expected, actual);
     }
-
 }

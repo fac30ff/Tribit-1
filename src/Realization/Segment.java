@@ -25,7 +25,7 @@ public class Segment {
         return triangles;
     }
 
-    public void constructSegment() { //let's pretend it really works %)
+    public void constructSegment() {
         int startForLine1 = 0;
         int endForLine1 = 1;
         int startForLine2 = 0;
@@ -75,4 +75,30 @@ public class Segment {
         return result.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Segment)) return false;
+
+        Segment segment = (Segment) o;
+
+        if (!line1.equals(segment.line1)) return false;
+        return line2.equals(segment.line2);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = line1.hashCode();
+        result = 31 * result + line2.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Segment[" +
+                "line1='" + line1 + '\'' +
+                ", line2='" + line2 + '\'' +
+                ']';
+    }
 }
