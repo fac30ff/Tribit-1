@@ -10,12 +10,12 @@ public class Triangle {
     private int entrails;
 
     public Triangle(String firstBit, String lastBits) {
-        this.firstBit = firstBit;
-        this.lastBits = lastBits;
-        entrails = Integer.valueOf(firstBit + lastBits,2);
+        this.firstBit = lastBits.substring(2,3);
+        this.lastBits = lastBits.substring(1,2) + lastBits.substring(0,1) + firstBit;
+        entrails = Integer.valueOf(this.firstBit + this.lastBits, 2);
     }
 
-    public void setFirstBitAndLastBitsByEntrails() {
+    public void setFirstBitAndLastBitsByEntrails() {  //can be invalid
         String temp = Integer.toBinaryString(entrails);
         firstBit = temp.substring(0, 1);
         lastBits = temp.substring(1);
@@ -32,10 +32,16 @@ public class Triangle {
 
     public void permutate() throws Exception {
         while (true) {
-            if (entrails == 0) return;
-            if (entrails == 15) return;
+            if (entrails == 0) {
+                firstBit = "0";
+                lastBits = "000";
+                return;}
+            if (entrails == 15) {
+                firstBit = "1";
+                lastBits = "111";
+                return; }
             entrails = permutation(entrails);
-            setFirstBitAndLastBitsByEntrails();
+//            setFirstBitAndLastBitsByEntrails();
         }
     }
 
